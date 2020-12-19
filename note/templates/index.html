@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Записная книга
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container text-center">
+    <h2>
+        Вас приветствует сервис "Записная книжка от Васи"
+    </h2>
+    {% if user.is_authenticated %}
+    <h4>
+        Вы можете перейти к <a href="{% url 'note_list' %}">списку заметок</a> или <a href="{% url 'note_create' %}">создать новую</a>
+    </h4>
+    {% else %}
+    <h4>        
+        Пожалуйста <a href="{% url 'login' %}">авторизуйтесь</a> или <a href="{% url 'register' %}">зарегистрируйтесь</a> для продолжения работы
+    </h4>    
+    {% endif %}
+</div>
+{% endblock %}

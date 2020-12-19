@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- <link rel="stylesheet" href="style.css"> -->
+<style margin='10px'></style>
+{% block title %}
+Записная книга
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="card col-6 offset-md-3">
+    <div class="card-body">
+    <h4 class="card-title">Форма авторизации</h4>
+    
+    <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    
+    {{ form|crispy }}
+    
+    <button type="submit" class="btn btn-success btn-block">Войти</button>
+    </form>
+    </div>
+    </div>
+{% endblock %}

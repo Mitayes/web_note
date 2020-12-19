@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Записная книга
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container text-center">
+    <h2>
+        Форма регистрации
+    </h2>
+    <br>
+</div>
+<form class="center text-center">
+    <div class="form-group">
+      <label for="registerEmailInput">Адрес электронной почты</label>
+      <input type="email" class="form-control col-4 offset-md-4" id="registerEmailInput" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="registerPasswordInput">Пароль</label>
+      <input type="password" class="form-control col-4 offset-md-4" id="registerPasswordInput">
+    </div>
+    <div class="form-group">
+        <label for="registerPasswordRetry">Подтверждение пароля</label>
+        <input type="password" class="form-control col-4 offset-md-4" id="registerPasswordRetry">
+      </div>
+    <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+</form>
+{% endblock %}
